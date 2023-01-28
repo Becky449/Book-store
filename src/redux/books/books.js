@@ -15,9 +15,9 @@ export const removeBooks = (payload) => ({
 
 const initialState = [{
   id: '1',
-  title: 'Death And The king Horseman',
-  author: 'Wole Soyinka',
-  category: 'Tragedy',
+  title: 'Working with Redux',
+  author: 'Rabecca n',
+  category: 'Programming',
 },
 ];
 
