@@ -1,36 +1,33 @@
-import types from '../types/types';
+const ADD_BOOK = 'BOOKSTORE/book/ADD_BOOK';
+const REMOVE_BOOK = 'BOOKSTORE/book/REMOVE_BOOK';
 
-// Initial state
-const initialState = {
-  books: [],
-};
-
-// Action creators
-export const addBookToStore = (payload) => ({
-  type: types.BOOK_ADDED,
+export const addBooks = (payload) => ({
+  type: ADD_BOOK,
   payload,
 });
 
-export const removeBookFromStore = (payload) => ({
-  type: types.BOOK_REMOVED,
+export const removeBooks = (payload) => ({
+  type: REMOVE_BOOK,
   payload,
 });
 
-// Reducer
+// reducers
+
+const initialState = [{
+  id: '1',
+  title: 'Death And The king Horseman',
+  author: 'Wole Soyinka',
+  category: 'Tragedy',
+},
+];
+
 const booksReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.BOOK_ADDED:
-      return {
-        ...state,
-        books: [...state.books, action.payload],
-      };
-
-    case types.BOOK_REMOVED:
-      return {
-        ...state,
-        books: [...state.books.filter((book) => book.id !== action.payload.id)],
-      };
-
+  const { type, payload } = action;
+  switch (type) {
+    case ADD_BOOK:
+      return [...state, payload];
+    case REMOVE_BOOK:
+      return state.filter((book) => book.id !== payload);
     default:
       return state;
   }

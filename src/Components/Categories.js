@@ -1,13 +1,19 @@
 import React from 'react';
-import Button from './Shared/Button';
+import { useSelector, useDispatch } from 'react-redux';
+import { checkStatus } from '../redux/categories/categories';
 
-const Categories = () => (
-  <>
-    <div className="book-categories">
-      <h2>Under Construction</h2>
-      <Button btnName="category-btn" btnValue="Check Status" />
-    </div>
-  </>
-);
+const Categories = () => {
+  const status = useSelector((state) => state.category);
+  const dispatch = useDispatch();
+  const statusHandler = () => {
+    dispatch(checkStatus());
+  };
 
+  return (
+    <>
+      <button className="checkstatus" type="button" name="buttton" onClick={statusHandler}>Check Status</button>
+      <p>{status}</p>
+    </>
+  );
+};
 export default Categories;
