@@ -58,8 +58,6 @@ nav.nav {
   gap: 10px;
 }
 
-
-
 .category {
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
@@ -235,7 +233,6 @@ input {
   padding: 5px;
 }
 
-.btn::before{
+.btn::before {
   height: 50%;
 }
-
