@@ -1,15 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import { Provider } from 'react-redux';
-import BookStore from 'components/Books';
-import store from './redux/configureStore';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BookStore />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root'),
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Router>
+    <App />
+  </Router>,
 );

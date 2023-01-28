@@ -1,0 +1,15 @@
+.nav-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.links {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+}
